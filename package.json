@@ -1,0 +1,84 @@
+{
+  "name": "jobtrack-e2e-tests",
+  "version": "1.0.0",
+  "description": "End-to-end test automation for JobTrack application using Playwright and Page Object Model (POM)",
+  "main": "playwright.config.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "test:trace": "playwright test --trace on",
+
+    "test:auth": "playwright test tests/auth.spec.js",
+    "test:jobs": "playwright test tests/jobs.spec.js",
+    "test:activities": "playwright test tests/activities.spec.js",
+    "test:timeline": "playwright test tests/timeline.spec.js",
+    "test:navigation": "playwright test tests/navigation.spec.js",
+
+    "test:pom": "playwright test tests/*.pom.spec.js",
+    "test:auth:pom": "playwright test tests/auth.pom.spec.js",
+    "test:jobs:pom": "playwright test tests/jobs.pom.spec.js",
+
+    "test:chrome": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:safari": "playwright test --project=webkit",
+    "test:mobile": "playwright test --project='Mobile Chrome'",
+
+    "test:parallel": "playwright test --workers=4",
+    "test:serial": "playwright test --workers=1",
+    "test:retry": "playwright test --retries=2",
+
+    "test:smoke": "playwright test --grep='@smoke'",
+    "test:regression": "playwright test --grep='@regression'",
+
+    "install:browsers": "playwright install",
+    "install:deps": "playwright install-deps",
+    "install:all": "npm install && playwright install --with-deps",
+
+    "clean": "rm -rf playwright-report test-results",
+    "setup": "npm run install:all && npm run test:auth -- --headed",
+
+    "lint": "echo 'Linting not configured yet'",
+    "format": "echo 'Formatting not configured yet'"
+  },
+  "keywords": [
+    "playwright",
+    "e2e-testing",
+    "test-automation",
+    "jobtrack",
+    "page-object-model",
+    "pom",
+    "javascript",
+    "testing-framework",
+    "qa-automation",
+    "end-to-end"
+  ],
+  "author": {
+    "name": "JobTrack Development Team",
+    "email": "dev@jobtrack.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/jobtrack-e2e-tests.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/jobtrack-e2e-tests/issues"
+  },
+  "homepage": "https://github.com/your-username/jobtrack-e2e-tests#readme",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.44.0"
+  },
+  "engines": {
+    "node": ">=18",
+    "npm": ">=8"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "private": true
+}

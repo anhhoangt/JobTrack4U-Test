@@ -1,0 +1,234 @@
+/**
+ * =====================================================
+ * AUTHENTICATION PAGE OBJECT
+ * =====================================================
+ *
+ * Page object for login/register functionality
+ */
+
+const BasePage = require('./BasePage');
+
+class AuthPage extends BasePage {
+  constructor(page) {
+    super(page);
+
+    // Locators
+    this.locators = {
+      // Form elements
+      nameInput: 'input[name="name"]',
+      emailInput: 'input[name="email"]',
+      passwordInput: 'input[name="password"]',
+      submitButton: 'button[type="submit"]',
+
+      // Mode toggle buttons
+      signUpButton: 'button:has-text("Sign Up")',
+      signInButton: 'button:has-text("Sign In")',
+
+      // Page elements
+      pageTitle: 'h3',
+      alertMessage: '[class*="alert"], .error, [role="alert"]',
+
+      // Navigation after auth
+      userInfo: '[data-testid="user-info"], .navbar',
+      dashboardContent: 'h1, h2, h3',
+
+      // Logout elements
+      logoutButton: 'button:has-text("Logout"), button:has-text("Sign Out"), [data-testid="logout-button"]',
+      userMenu: '[data-testid="user-menu"], .user-dropdown, .nav-user'
+    };
+  }
+
+  /**
+   * Navigate to register/login page
+   */
+  async navigateToAuth() {
+    await this.navigate('/register');
+  }
+
+  /**
+   * Switch to register mode
+   */
+  async switchToRegister() {
+    const registerButton = this.page.locator(this.locators.signUpButton);
+    if (await registerButton.isVisible()) {
+      await this.clickElement(this.locators.signUpButton);
+    }
+  }
+
+  /**
+   * Switch to login mode
+   */
+  async switchToLogin() {
+    const loginButton = this.page.locator(this.locators.signInButton);
+    if (await loginButton.isVisible()) {
+      await this.clickElement(this.locators.signInButton);
+    }
+  }
+
+  /**
+   * Fill registration form
+   * @param {Object} userData - User data object
+   * @param {string} userData.name - User name
+   * @param {string} userData.email - User email
+   * @param {string} userData.password - User password
+   */
+  async fillRegistrationForm(userData) {
+    await this.switchToRegister();
+    await this.fillInput(this.locators.nameInput, userData.name);
+    await this.fillInput(this.locators.emailInput, userData.email);
+    await this.fillInput(this.locators.passwordInput, userData.password);
+  }
+
+  /**
+   * Fill login form
+   * @param {Object} credentials - Login credentials
+   * @param {string} credentials.email - User email
+   * @param {string} credentials.password - User password
+   */
+  async fillLoginForm(credentials) {
+    await this.switchToLogin();
+    await this.fillInput(this.locators.emailInput, credentials.email);
+    await this.fillInput(this.locators.passwordInput, credentials.password);
+  }
+
+  /**
+   * Submit authentication form
+   */
+  async submitForm() {
+    await this.clickElement(this.locators.submitButton);
+  }
+
+  /**
+   * Register a new user
+   * @param {Object} userData - User registration data
+   */
+  async register(userData) {
+    await this.fillRegistrationForm(userData);
+    await this.submitForm();
+  }
+
+  /**
+   * Login with existing credentials
+   * @param {Object} credentials - Login credentials
+   */
+  async login(credentials) {
+    await this.fillLoginForm(credentials);
+    await this.submitForm();
+  }
+
+  /**
+   * Perform full login flow (navigate + login)
+   * @param {Object} credentials - Login credentials
+   */
+  async performLogin(credentials = { email: 'test@jobtrack.com', password: 'testpassword123' }) {
+    await this.navigateToAuth();
+    await this.login(credentials);
+    await this.waitForUrl('/');
+  }
+
+  /**
+   * Logout user
+   */
+  async logout() {
+    const logoutButton = this.page.locator(this.locators.logoutButton);
+
+    // Try to find logout in user menu if not directly visible
+    if (!(await logoutButton.isVisible())) {
+      const userMenu = this.page.locator(this.locators.userMenu);
+      if (await userMenu.isVisible()) {
+        await this.clickElement(this.locators.userMenu);
+      }
+    }
+
+    await this.clickElement(this.locators.logoutButton);
+    await this.waitForUrl('/register');
+  }
+
+  /**
+   * Check if user is on register page
+   * @returns {boolean} True if on register page
+   */
+  async isOnRegisterPage() {
+    return this.page.url().includes('/register');
+  }
+
+  /**
+   * Check if user is on dashboard
+   * @returns {boolean} True if on dashboard
+   */
+  async isOnDashboard() {
+    return this.page.url() === `${this.page.url().split('/')[0]}//${this.page.url().split('/')[2]}/`;
+  }
+
+  /**
+   * Check if alert message is visible
+   * @returns {boolean} True if alert is visible
+   */
+  async isAlertVisible() {
+    return await this.isVisible(this.locators.alertMessage);
+  }
+
+  /**
+   * Get alert message text
+   * @returns {string} Alert message text
+   */
+  async getAlertMessage() {
+    return await this.getTextContent(this.locators.alertMessage);
+  }
+
+  /**
+   * Check if name field is visible (register mode indicator)
+   * @returns {boolean} True if name field is visible
+   */
+  async isNameFieldVisible() {
+    return await this.isVisible(this.locators.nameInput);
+  }
+
+  /**
+   * Check if user info is displayed (logged in indicator)
+   * @returns {boolean} True if user info is visible
+   */
+  async isUserInfoVisible() {
+    return await this.isVisible(this.locators.userInfo);
+  }
+
+  /**
+   * Get page title text
+   * @returns {string} Page title text
+   */
+  async getPageTitle() {
+    return await this.getTextContent(this.locators.pageTitle);
+  }
+
+  /**
+   * Check email field validation message
+   * @returns {string} Validation message
+   */
+  async getEmailValidationMessage() {
+    const emailInput = this.page.locator(this.locators.emailInput);
+    return await emailInput.evaluate(el => el.validationMessage);
+  }
+
+  /**
+   * Check if form fields are empty
+   * @returns {Object} Object with field values
+   */
+  async getFormValues() {
+    return {
+      name: await this.page.locator(this.locators.nameInput).inputValue(),
+      email: await this.page.locator(this.locators.emailInput).inputValue(),
+      password: await this.page.locator(this.locators.passwordInput).inputValue()
+    };
+  }
+
+  /**
+   * Generate unique test email
+   * @returns {string} Unique email address
+   */
+  generateTestEmail() {
+    const timestamp = Date.now();
+    return `test${timestamp}@jobtrack.com`;
+  }
+}
+
+module.exports = AuthPage;
