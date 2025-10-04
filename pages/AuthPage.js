@@ -29,8 +29,8 @@ class AuthPage extends BasePage {
       alertMessage: '[class*="alert"], .error, [role="alert"]',
 
       // Navigation after auth
-      userInfo: '[data-testid="user-info"], .navbar',
-      dashboardContent: 'h1, h2, h3',
+      userInfo: '.btn-container .btn, .nav-center .btn, button:has-text("anh")',
+      dashboardContent: 'h1, h2, h3, .logo-text',
 
       // Logout elements
       logoutButton: 'button:has-text("Logout"), button:has-text("Sign Out"), [data-testid="logout-button"]',
@@ -120,7 +120,7 @@ class AuthPage extends BasePage {
    * Perform full login flow (navigate + login)
    * @param {Object} credentials - Login credentials
    */
-  async performLogin(credentials = { email: 'test@jobtrack.com', password: 'testpassword123' }) {
+  async performLogin(credentials = { email: 'aaaa@gmail.com', password: 'aaaaaa' }) {
     await this.navigateToAuth();
     await this.login(credentials);
     await this.waitForUrl('/');

@@ -25,22 +25,22 @@ class AddJobPage extends BasePage {
       statusSelect: 'select[name="status"]',
 
       // Enhanced fields (Phase 1)
-      salaryMinInput: 'input[name="salaryMin"]',
-      salaryMaxInput: 'input[name="salaryMax"]',
+      salaryMinInput: '.form-input[name="salaryMin"]',
+      salaryMaxInput: '.form-input[name="salaryMax"]',
       salaryCurrencySelect: 'select[name="salaryCurrency"]',
-      jobDescriptionTextarea: 'textarea[name="jobDescription"]',
-      companyWebsiteInput: 'input[name="companyWebsite"]',
-      jobPostingUrlInput: 'input[name="jobPostingUrl"]',
+      jobDescriptionTextarea: '.form-textarea[name="jobDescription"]',
+      companyWebsiteInput: '.form-input[name="companyWebsite"]',
+      jobPostingUrlInput: '.form-input[name="jobPostingUrl"]',
       applicationMethodSelect: 'select[name="applicationMethod"]',
-      notesTextarea: 'textarea[name="notes"]',
+      notesTextarea: '.form-textarea[name="notes"]',
 
       // Phase 2 fields
       categorySelect: 'select[name="category"]',
-      tagsInput: 'input[name="tags"]',
+      tagsInput: '.form-input[name="tags"]',
       prioritySelect: 'select[name="priority"]',
 
       // Form actions
-      submitButton: 'button[type="submit"]',
+      submitButton: '.submit-btn, button[type="submit"]',
 
       // Messages
       alertMessage: '[class*="alert"], .success, .error'

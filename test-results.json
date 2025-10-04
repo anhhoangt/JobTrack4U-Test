@@ -1,0 +1,242 @@
+{
+  "config": {
+    "configFile": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/playwright.config.js",
+    "rootDir": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/global-setup.js",
+    "globalTeardown": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/global-teardown.js",
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "playwright-report"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results.json"
+        }
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Chrome",
+        "name": "Mobile Chrome",
+        "testDir": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Mobile Safari",
+        "name": "Mobile Safari",
+        "testDir": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "Microsoft Edge",
+        "name": "Microsoft Edge",
+        "testDir": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.55.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "jobs.pom.spec.js",
+      "file": "jobs.pom.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Job Management - POM",
+          "file": "jobs.pom.spec.js",
+          "line": 19,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should create a new job successfully",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 4983,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at /Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/tests/jobs.pom.spec.js:44:43",
+                        "location": {
+                          "file": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/tests/jobs.pom.spec.js",
+                          "column": 43,
+                          "line": 44
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 42 |\u001b[39m     \u001b[36mconst\u001b[39m verification \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m addJobPage\u001b[33m.\u001b[39mverifyAddJobPageLoaded()\u001b[33m;\u001b[39m\n \u001b[90m 43 |\u001b[39m     expect(verification\u001b[33m.\u001b[39misOnCorrectUrl)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 44 |\u001b[39m     expect(verification\u001b[33m.\u001b[39mhasPositionField)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 45 |\u001b[39m\n \u001b[90m 46 |\u001b[39m     \u001b[90m// Create job with complete data\u001b[39m\n \u001b[90m 47 |\u001b[39m     \u001b[36mconst\u001b[39m jobData \u001b[33m=\u001b[39m {\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/tests/jobs.pom.spec.js",
+                            "column": 43,
+                            "line": 44
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 42 |\u001b[39m     \u001b[36mconst\u001b[39m verification \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m addJobPage\u001b[33m.\u001b[39mverifyAddJobPageLoaded()\u001b[33m;\u001b[39m\n \u001b[90m 43 |\u001b[39m     expect(verification\u001b[33m.\u001b[39misOnCorrectUrl)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 44 |\u001b[39m     expect(verification\u001b[33m.\u001b[39mhasPositionField)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 45 |\u001b[39m\n \u001b[90m 46 |\u001b[39m     \u001b[90m// Create job with complete data\u001b[39m\n \u001b[90m 47 |\u001b[39m     \u001b[36mconst\u001b[39m jobData \u001b[33m=\u001b[39m {\u001b[0m\n\u001b[2m    at /Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/tests/jobs.pom.spec.js:44:43\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-10-04T01:09:31.293Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/test-results/jobs.pom-Job-Management----64e1e-eate-a-new-job-successfully-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/test-results/jobs.pom-Job-Management----64e1e-eate-a-new-job-successfully-chromium/video.webm"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/tests/jobs.pom.spec.js",
+                        "column": 43,
+                        "line": 44
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "5162d9efd83743bcad00-cf9454cd370cf264d86e",
+              "file": "jobs.pom.spec.js",
+              "line": 37,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-10-04T01:08:58.481Z",
+    "duration": 39025.746,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

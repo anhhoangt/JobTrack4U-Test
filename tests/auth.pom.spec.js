@@ -63,8 +63,8 @@ test.describe('Authentication - POM', () => {
 
     // Login with test credentials
     const credentials = {
-      email: 'test@jobtrack.com',
-      password: 'testpassword123'
+      email: 'aaaa@gmail.com',
+      password: 'aaaaaa'
     };
 
     await authPage.login(credentials);
@@ -195,8 +195,8 @@ test.describe('Authentication - POM', () => {
     await authPage.navigateToAuth();
 
     const credentials = {
-      email: 'test@jobtrack.com',
-      password: 'testpassword123'
+      email: 'aaaa@gmail.com',
+      password: 'aaaaaa'
     };
 
     // Perform multiple login attempts to ensure consistency

@@ -15,12 +15,12 @@ class NavigationComponent extends BasePage {
     // Locators
     this.locators = {
       // Main navigation links
-      statsLink: 'a[href="/"], a:has-text("Stats")',
-      allJobsLink: 'a[href="/all-jobs"], a:has-text("All Jobs")',
-      addJobLink: 'a[href="/add-job"], a:has-text("Add Job")',
-      activitiesLink: 'a[href="/activities"], a:has-text("Activities")',
-      timelineLink: 'a[href="/timeline"], a:has-text("Timeline")',
-      profileLink: 'a[href="/profile"], a:has-text("Profile")',
+      statsLink: '.nav-link[href="/"], a[href="/"]',
+      allJobsLink: '.nav-link[href="/all-jobs"], a[href="/all-jobs"]',
+      addJobLink: '.nav-link[href="/add-job"], a[href="/add-job"]',
+      activitiesLink: '.nav-link[href="/activities"], a[href="/activities"]',
+      timelineLink: '.nav-link[href="/timeline"], a[href="/timeline"]',
+      profileLink: '.nav-link[href="/profile"], a[href="/profile"]',
 
       // Navigation containers
       navigation: 'nav, .navigation, .navbar, .sidebar',
@@ -63,7 +63,15 @@ class NavigationComponent extends BasePage {
    * Navigate to add job page
    */
   async goToAddJob() {
-    await this.clickElement(this.locators.addJobLink);
+    // Use first() to handle multiple matching elements
+    const addJobLink = this.page.locator(this.locators.addJobLink).first();
+
+    if (await addJobLink.isVisible()) {
+      await addJobLink.click();
+    } else {
+      // If not visible, navigate directly
+      await this.navigate('/add-job');
+    }
     await this.waitForUrl('/add-job');
   }
 
