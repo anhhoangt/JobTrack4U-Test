@@ -180,17 +180,17 @@ test('Complete job workflow', async ({ page }) => {
   const authPage = new AuthPage(page);
   const addJobPage = new AddJobPage(page);
   const jobsPage = new JobsPage(page);
-  
+
   // Login using page object
   await authPage.performLogin();
-  
+
   // Create job using page object
   await addJobPage.navigateToAddJob();
   await addJobPage.createTestJob({
     position: 'Senior Engineer',
     company: 'Tech Corp'
   });
-  
+
   // Verify in job listing
   await jobsPage.navigateToJobs();
   expect(await jobsPage.jobCardContainsText('Tech Corp')).toBe(true);
