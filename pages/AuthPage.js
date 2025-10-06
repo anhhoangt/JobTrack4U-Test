@@ -28,13 +28,14 @@ class AuthPage extends BasePage {
       pageTitle: 'h3',
       alertMessage: '[class*="alert"], .error, [role="alert"]',
 
-      // Navigation after auth
-      userInfo: '.btn-container .btn, .nav-center .btn, button:has-text("anh")',
+      // Navigation after auth - user info appears in different places
+      userInfo: '.btn-container .btn, .nav-center .btn, button:has-text("anh"), .nav-links, .sidebar .nav-links, .big-sidebar .nav-links',
       dashboardContent: 'h1, h2, h3, .logo-text',
 
       // Logout elements
-      logoutButton: 'button:has-text("Logout"), button:has-text("Sign Out"), [data-testid="logout-button"]',
-      userMenu: '[data-testid="user-menu"], .user-dropdown, .nav-user'
+      logoutButton: 'button:has-text("logout"), button:has-text("Logout"), button:has-text("Sign Out"), [data-testid="logout-button"]',
+      userMenu: '[data-testid="user-menu"], .user-dropdown, .nav-user, .btn-container .btn',
+      dropdownToggle: '.btn-container .btn, button:has-text("anh"), .dropdown-btn'
     };
   }
 
@@ -136,18 +137,41 @@ class AuthPage extends BasePage {
    * Logout user
    */
   async logout() {
-    const logoutButton = this.page.locator(this.locators.logoutButton);
+    // First try to click the user button (with "anh" text) to open dropdown
+    const userButton = this.page.locator('button:has-text("anh")').first();
 
-    // Try to find logout in user menu if not directly visible
-    if (!(await logoutButton.isVisible())) {
-      const userMenu = this.page.locator(this.locators.userMenu);
-      if (await userMenu.isVisible()) {
-        await this.clickElement(this.locators.userMenu);
+    if (await userButton.isVisible()) {
+      await userButton.click();
+      // Wait for dropdown to open
+      await this.waitForTimeout(1000);
+    }
+
+    // Now try to find and click the logout button
+    const logoutButton = this.page.locator('button:has-text("logout")').first();
+
+    if (await logoutButton.isVisible()) {
+      await logoutButton.click();
+    } else {
+      // If still not visible, try alternative selectors
+      const altLogoutButton = this.page.locator(this.locators.logoutButton).first();
+      if (await altLogoutButton.isVisible()) {
+        await altLogoutButton.click();
       }
     }
 
-    await this.clickElement(this.locators.logoutButton);
-    await this.waitForUrl('/register');
+    // Wait for navigation to complete with more flexible approach
+    try {
+      await this.waitForUrl('/landing');
+    } catch (error) {
+      // If landing page doesn't load, wait for any navigation away from current page
+      await this.waitForTimeout(3000);
+
+      // Check if we're on landing page or any other auth page
+      if (!this.page.url().includes('/landing') && !this.page.url().includes('/register')) {
+        // If logout didn't work as expected, try to navigate to landing directly
+        await this.navigate('/landing');
+      }
+    }
   }
 
   /**

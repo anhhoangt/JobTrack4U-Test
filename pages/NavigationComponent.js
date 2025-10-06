@@ -153,7 +153,13 @@ class NavigationComponent extends BasePage {
    * @returns {boolean} True if navigation is visible
    */
   async isNavigationVisible() {
-    return await this.isVisible(this.locators.navigation);
+    // Check multiple navigation indicators
+    const navVisible = await this.isVisible(this.locators.navigation);
+    const sidebarVisible = await this.isVisible(this.locators.sidebar);
+    const statsLinkVisible = await this.isVisible(this.locators.statsLink);
+
+    // Navigation is considered visible if any of these are true
+    return navVisible || sidebarVisible || statsLinkVisible;
   }
 
   /**

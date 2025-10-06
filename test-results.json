@@ -158,14 +158,14 @@
           "specs": [],
           "suites": [
             {
-              "title": "🚀 User Login Happy Path",
+              "title": "🔒 Authentication State Verification",
               "file": "auth-happy-path.spec.js",
-              "line": 126,
+              "line": 465,
               "column": 8,
               "specs": [
                 {
-                  "title": "should maintain user session after successful login",
-                  "ok": false,
+                  "title": "should handle direct URL navigation after authentication",
+                  "ok": true,
                   "tags": [],
                   "tests": [
                     {
@@ -178,63 +178,23 @@
                         {
                           "workerIndex": 0,
                           "parallelIndex": 0,
-                          "status": "failed",
-                          "duration": 34589,
-                          "error": {
-                            "message": "TimeoutError: page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.nav-link[href=\"/all-jobs\"], a[href=\"/all-jobs\"]')\u001b[22m\n\u001b[2m    - locator resolved to 2 elements. Proceeding with the first one: <a class=\"nav-link\" href=\"/all-jobs\">…</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
-                            "stack": "TimeoutError: page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.nav-link[href=\"/all-jobs\"], a[href=\"/all-jobs\"]')\u001b[22m\n\u001b[2m    - locator resolved to 2 elements. Proceeding with the first one: <a class=\"nav-link\" href=\"/all-jobs\">…</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n    at NavigationComponent.clickElement (/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/pages/BasePage.js:55:21)\n    at NavigationComponent.goToAllJobs (/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/pages/NavigationComponent.js:58:16)\n    at /Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/tests/auth-happy-path.spec.js:163:24",
-                            "location": {
-                              "file": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/pages/BasePage.js",
-                              "column": 21,
-                              "line": 55
-                            },
-                            "snippet": "\u001b[90m   at \u001b[39m../pages/BasePage.js:55\n\n\u001b[0m \u001b[90m 53 |\u001b[39m \u001b[90m   */\u001b[39m\n \u001b[90m 54 |\u001b[39m   \u001b[36masync\u001b[39m clickElement(selector) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 55 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(selector)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 56 |\u001b[39m   }\n \u001b[90m 57 |\u001b[39m\n \u001b[90m 58 |\u001b[39m   \u001b[90m/**\u001b[39m\u001b[0m"
-                          },
-                          "errors": [
-                            {
-                              "location": {
-                                "file": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/pages/BasePage.js",
-                                "column": 21,
-                                "line": 55
-                              },
-                              "message": "TimeoutError: page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.nav-link[href=\"/all-jobs\"], a[href=\"/all-jobs\"]')\u001b[22m\n\u001b[2m    - locator resolved to 2 elements. Proceeding with the first one: <a class=\"nav-link\" href=\"/all-jobs\">…</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n\n\u001b[90m   at \u001b[39m../pages/BasePage.js:55\n\n\u001b[0m \u001b[90m 53 |\u001b[39m \u001b[90m   */\u001b[39m\n \u001b[90m 54 |\u001b[39m   \u001b[36masync\u001b[39m clickElement(selector) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 55 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(selector)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 56 |\u001b[39m   }\n \u001b[90m 57 |\u001b[39m\n \u001b[90m 58 |\u001b[39m   \u001b[90m/**\u001b[39m\u001b[0m\n\u001b[2m    at NavigationComponent.clickElement (/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/pages/BasePage.js:55:21)\u001b[22m\n\u001b[2m    at NavigationComponent.goToAllJobs (/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/pages/NavigationComponent.js:58:16)\u001b[22m\n\u001b[2m    at /Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/tests/auth-happy-path.spec.js:163:24\u001b[22m"
-                            }
-                          ],
+                          "status": "passed",
+                          "duration": 4135,
+                          "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2025-10-06T17:28:21.626Z",
+                          "startTime": "2025-10-06T19:26:01.697Z",
                           "annotations": [],
-                          "attachments": [
-                            {
-                              "name": "screenshot",
-                              "contentType": "image/png",
-                              "path": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/test-results/auth-happy-path-Authentica-5977f-sion-after-successful-login-chromium/test-failed-1.png"
-                            },
-                            {
-                              "name": "video",
-                              "contentType": "video/webm",
-                              "path": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/test-results/auth-happy-path-Authentica-5977f-sion-after-successful-login-chromium/video.webm"
-                            },
-                            {
-                              "name": "error-context",
-                              "contentType": "text/markdown",
-                              "path": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/test-results/auth-happy-path-Authentica-5977f-sion-after-successful-login-chromium/error-context.md"
-                            }
-                          ],
-                          "errorLocation": {
-                            "file": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/pages/BasePage.js",
-                            "column": 21,
-                            "line": 55
-                          }
+                          "attachments": []
                         }
                       ],
-                      "status": "unexpected"
+                      "status": "expected"
                     }
                   ],
-                  "id": "de9e7153f04ca3c96972-e5f923b9ba52e44d7c02",
+                  "id": "de9e7153f04ca3c96972-3242c62a6f6ee8a51902",
                   "file": "auth-happy-path.spec.js",
-                  "line": 154,
+                  "line": 499,
                   "column": 5
                 }
               ]
@@ -246,11 +206,11 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-10-06T17:27:49.231Z",
-    "duration": 67244.551,
-    "expected": 0,
+    "startTime": "2025-10-06T19:25:29.321Z",
+    "duration": 36810.792,
+    "expected": 1,
     "skipped": 0,
-    "unexpected": 1,
+    "unexpected": 0,
     "flaky": 0
   }
 }
