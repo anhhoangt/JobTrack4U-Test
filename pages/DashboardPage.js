@@ -26,7 +26,7 @@ class DashboardPage extends BasePage {
       declinedJobs: 'text=/declined/i',
 
       // Welcome message
-      welcomeMessage: 'text=/Stats|Dashboard|Welcome/i'
+      welcomeMessage: 'h3:has-text("dashboard"), h1:has-text("Stats"), h2:has-text("Welcome")'
     };
   }
 
@@ -76,7 +76,11 @@ class DashboardPage extends BasePage {
    * @returns {boolean} True if welcome message is visible
    */
   async isWelcomeMessageVisible() {
-    return await this.isVisible(this.locators.welcomeMessage);
+    try {
+      return await this.page.locator(this.locators.welcomeMessage).first().isVisible();
+    } catch (error) {
+      return false;
+    }
   }
 
   /**

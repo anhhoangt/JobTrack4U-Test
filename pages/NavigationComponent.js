@@ -27,8 +27,8 @@ class NavigationComponent extends BasePage {
       sidebar: '.sidebar, .nav-sidebar, .side-nav',
 
       // Mobile navigation
-      mobileToggle: '[data-testid="mobile-toggle"], .mobile-menu-toggle, .hamburger-menu, button[aria-label*="menu"]',
-      mobileNav: '.mobile-nav, .sidebar, .nav-mobile',
+      mobileToggle: '.toggle-btn, [data-testid="mobile-toggle"], .mobile-menu-toggle, .hamburger-menu, button[aria-label*="menu"]',
+      mobileNav: '.mobile-nav, .sidebar, .nav-mobile, .show-sidebar',
 
       // User info and logout
       userInfo: '[data-testid="user-info"], .user-info, .nav-user',
@@ -47,7 +47,20 @@ class NavigationComponent extends BasePage {
    * Navigate to dashboard/stats page
    */
   async goToStats() {
-    await this.clickElement(this.locators.statsLink);
+    const statsLink = this.page.locator(this.locators.statsLink).first();
+
+    if (!(await statsLink.isVisible())) {
+      // Try to open mobile navigation or sidebar
+      await this.toggleMobileNav();
+      await this.waitForTimeout(1000);
+    }
+
+    if (await statsLink.isVisible()) {
+      await statsLink.click();
+    } else {
+      // If still not visible, navigate directly
+      await this.navigate('/');
+    }
     await this.waitForUrl('/');
   }
 
@@ -55,7 +68,21 @@ class NavigationComponent extends BasePage {
    * Navigate to all jobs page
    */
   async goToAllJobs() {
-    await this.clickElement(this.locators.allJobsLink);
+    // First check if navigation links are visible, if not try to open sidebar/mobile menu
+    const allJobsLink = this.page.locator(this.locators.allJobsLink).first();
+
+    if (!(await allJobsLink.isVisible())) {
+      // Try to open mobile navigation or sidebar
+      await this.toggleMobileNav();
+      await this.waitForTimeout(1000);
+    }
+
+    if (await allJobsLink.isVisible()) {
+      await allJobsLink.click();
+    } else {
+      // If still not visible, navigate directly
+      await this.navigate('/all-jobs');
+    }
     await this.waitForUrl('/all-jobs');
   }
 

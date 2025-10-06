@@ -79,7 +79,11 @@ class BasePage {
    * @returns {boolean} True if visible
    */
   async isVisible(selector) {
-    return await this.page.locator(selector).isVisible();
+    try {
+      return await this.page.locator(selector).first().isVisible();
+    } catch (error) {
+      return false;
+    }
   }
 
   /**

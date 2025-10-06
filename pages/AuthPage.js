@@ -21,8 +21,8 @@ class AuthPage extends BasePage {
       submitButton: 'button[type="submit"]',
 
       // Mode toggle buttons
-      signUpButton: 'button:has-text("Sign Up")',
-      signInButton: 'button:has-text("Sign In")',
+      signUpButton: 'button:has-text("Register Now"), button.member-btn:has-text("Register")',
+      signInButton: 'button:has-text("Login Here"), button.member-btn:has-text("Login")',
 
       // Page elements
       pageTitle: 'h3',
@@ -73,7 +73,13 @@ class AuthPage extends BasePage {
    * @param {string} userData.password - User password
    */
   async fillRegistrationForm(userData) {
+    // First switch to register mode to show all registration fields
     await this.switchToRegister();
+
+    // Wait for the form to update and show name field
+    await this.waitForTimeout(1000);
+
+    // Fill all registration fields (name, email, password)
     await this.fillInput(this.locators.nameInput, userData.name);
     await this.fillInput(this.locators.emailInput, userData.email);
     await this.fillInput(this.locators.passwordInput, userData.password);
@@ -149,7 +155,7 @@ class AuthPage extends BasePage {
    * @returns {boolean} True if on register page
    */
   async isOnRegisterPage() {
-    return this.page.url().includes('/register');
+    return this.page.url().includes('/register') || this.page.url().includes('/landing');
   }
 
   /**

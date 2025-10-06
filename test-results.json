@@ -144,86 +144,100 @@
   },
   "suites": [
     {
-      "title": "jobs.pom.spec.js",
-      "file": "jobs.pom.spec.js",
+      "title": "auth-happy-path.spec.js",
+      "file": "auth-happy-path.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Job Management - POM",
-          "file": "jobs.pom.spec.js",
-          "line": 19,
+          "title": "Authentication Happy Path - POM",
+          "file": "auth-happy-path.spec.js",
+          "line": 22,
           "column": 6,
-          "specs": [
+          "specs": [],
+          "suites": [
             {
-              "title": "should create a new job successfully",
-              "ok": false,
-              "tags": [],
-              "tests": [
+              "title": "🚀 User Login Happy Path",
+              "file": "auth-happy-path.spec.js",
+              "line": 126,
+              "column": 8,
+              "specs": [
                 {
-                  "timeout": 60000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "chromium",
-                  "projectName": "chromium",
-                  "results": [
+                  "title": "should maintain user session after successful login",
+                  "ok": false,
+                  "tags": [],
+                  "tests": [
                     {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "failed",
-                      "duration": 4983,
-                      "error": {
-                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
-                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at /Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/tests/jobs.pom.spec.js:44:43",
-                        "location": {
-                          "file": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/tests/jobs.pom.spec.js",
-                          "column": 43,
-                          "line": 44
-                        },
-                        "snippet": "\u001b[0m \u001b[90m 42 |\u001b[39m     \u001b[36mconst\u001b[39m verification \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m addJobPage\u001b[33m.\u001b[39mverifyAddJobPageLoaded()\u001b[33m;\u001b[39m\n \u001b[90m 43 |\u001b[39m     expect(verification\u001b[33m.\u001b[39misOnCorrectUrl)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 44 |\u001b[39m     expect(verification\u001b[33m.\u001b[39mhasPositionField)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 45 |\u001b[39m\n \u001b[90m 46 |\u001b[39m     \u001b[90m// Create job with complete data\u001b[39m\n \u001b[90m 47 |\u001b[39m     \u001b[36mconst\u001b[39m jobData \u001b[33m=\u001b[39m {\u001b[0m"
-                      },
-                      "errors": [
-                        {
-                          "location": {
-                            "file": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/tests/jobs.pom.spec.js",
-                            "column": 43,
-                            "line": 44
-                          },
-                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 42 |\u001b[39m     \u001b[36mconst\u001b[39m verification \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m addJobPage\u001b[33m.\u001b[39mverifyAddJobPageLoaded()\u001b[33m;\u001b[39m\n \u001b[90m 43 |\u001b[39m     expect(verification\u001b[33m.\u001b[39misOnCorrectUrl)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 44 |\u001b[39m     expect(verification\u001b[33m.\u001b[39mhasPositionField)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 45 |\u001b[39m\n \u001b[90m 46 |\u001b[39m     \u001b[90m// Create job with complete data\u001b[39m\n \u001b[90m 47 |\u001b[39m     \u001b[36mconst\u001b[39m jobData \u001b[33m=\u001b[39m {\u001b[0m\n\u001b[2m    at /Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/tests/jobs.pom.spec.js:44:43\u001b[22m"
-                        }
-                      ],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2025-10-04T01:09:31.293Z",
+                      "timeout": 60000,
                       "annotations": [],
-                      "attachments": [
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
                         {
-                          "name": "screenshot",
-                          "contentType": "image/png",
-                          "path": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/test-results/jobs.pom-Job-Management----64e1e-eate-a-new-job-successfully-chromium/test-failed-1.png"
-                        },
-                        {
-                          "name": "video",
-                          "contentType": "video/webm",
-                          "path": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/test-results/jobs.pom-Job-Management----64e1e-eate-a-new-job-successfully-chromium/video.webm"
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "failed",
+                          "duration": 34589,
+                          "error": {
+                            "message": "TimeoutError: page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.nav-link[href=\"/all-jobs\"], a[href=\"/all-jobs\"]')\u001b[22m\n\u001b[2m    - locator resolved to 2 elements. Proceeding with the first one: <a class=\"nav-link\" href=\"/all-jobs\">…</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n",
+                            "stack": "TimeoutError: page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.nav-link[href=\"/all-jobs\"], a[href=\"/all-jobs\"]')\u001b[22m\n\u001b[2m    - locator resolved to 2 elements. Proceeding with the first one: <a class=\"nav-link\" href=\"/all-jobs\">…</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n    at NavigationComponent.clickElement (/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/pages/BasePage.js:55:21)\n    at NavigationComponent.goToAllJobs (/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/pages/NavigationComponent.js:58:16)\n    at /Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/tests/auth-happy-path.spec.js:163:24",
+                            "location": {
+                              "file": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/pages/BasePage.js",
+                              "column": 21,
+                              "line": 55
+                            },
+                            "snippet": "\u001b[90m   at \u001b[39m../pages/BasePage.js:55\n\n\u001b[0m \u001b[90m 53 |\u001b[39m \u001b[90m   */\u001b[39m\n \u001b[90m 54 |\u001b[39m   \u001b[36masync\u001b[39m clickElement(selector) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 55 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(selector)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 56 |\u001b[39m   }\n \u001b[90m 57 |\u001b[39m\n \u001b[90m 58 |\u001b[39m   \u001b[90m/**\u001b[39m\u001b[0m"
+                          },
+                          "errors": [
+                            {
+                              "location": {
+                                "file": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/pages/BasePage.js",
+                                "column": 21,
+                                "line": 55
+                              },
+                              "message": "TimeoutError: page.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('.nav-link[href=\"/all-jobs\"], a[href=\"/all-jobs\"]')\u001b[22m\n\u001b[2m    - locator resolved to 2 elements. Proceeding with the first one: <a class=\"nav-link\" href=\"/all-jobs\">…</a>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m    - waiting 20ms\u001b[22m\n\u001b[2m    2 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m      - element is not visible\u001b[22m\n\u001b[2m    - retrying click action\u001b[22m\n\u001b[2m      - waiting 100ms\u001b[22m\n\u001b[2m    58 × waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m       - element is not visible\u001b[22m\n\u001b[2m     - retrying click action\u001b[22m\n\u001b[2m       - waiting 500ms\u001b[22m\n\n\n\u001b[90m   at \u001b[39m../pages/BasePage.js:55\n\n\u001b[0m \u001b[90m 53 |\u001b[39m \u001b[90m   */\u001b[39m\n \u001b[90m 54 |\u001b[39m   \u001b[36masync\u001b[39m clickElement(selector) {\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 55 |\u001b[39m     \u001b[36mawait\u001b[39m \u001b[36mthis\u001b[39m\u001b[33m.\u001b[39mpage\u001b[33m.\u001b[39mclick(selector)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 56 |\u001b[39m   }\n \u001b[90m 57 |\u001b[39m\n \u001b[90m 58 |\u001b[39m   \u001b[90m/**\u001b[39m\u001b[0m\n\u001b[2m    at NavigationComponent.clickElement (/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/pages/BasePage.js:55:21)\u001b[22m\n\u001b[2m    at NavigationComponent.goToAllJobs (/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/pages/NavigationComponent.js:58:16)\u001b[22m\n\u001b[2m    at /Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/tests/auth-happy-path.spec.js:163:24\u001b[22m"
+                            }
+                          ],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2025-10-06T17:28:21.626Z",
+                          "annotations": [],
+                          "attachments": [
+                            {
+                              "name": "screenshot",
+                              "contentType": "image/png",
+                              "path": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/test-results/auth-happy-path-Authentica-5977f-sion-after-successful-login-chromium/test-failed-1.png"
+                            },
+                            {
+                              "name": "video",
+                              "contentType": "video/webm",
+                              "path": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/test-results/auth-happy-path-Authentica-5977f-sion-after-successful-login-chromium/video.webm"
+                            },
+                            {
+                              "name": "error-context",
+                              "contentType": "text/markdown",
+                              "path": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/test-results/auth-happy-path-Authentica-5977f-sion-after-successful-login-chromium/error-context.md"
+                            }
+                          ],
+                          "errorLocation": {
+                            "file": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/pages/BasePage.js",
+                            "column": 21,
+                            "line": 55
+                          }
                         }
                       ],
-                      "errorLocation": {
-                        "file": "/Users/anhthehoang/Desktop/learning-code/jobtrack-e2e-tests/tests/jobs.pom.spec.js",
-                        "column": 43,
-                        "line": 44
-                      }
+                      "status": "unexpected"
                     }
                   ],
-                  "status": "unexpected"
+                  "id": "de9e7153f04ca3c96972-e5f923b9ba52e44d7c02",
+                  "file": "auth-happy-path.spec.js",
+                  "line": 154,
+                  "column": 5
                 }
-              ],
-              "id": "5162d9efd83743bcad00-cf9454cd370cf264d86e",
-              "file": "jobs.pom.spec.js",
-              "line": 37,
-              "column": 3
+              ]
             }
           ]
         }
@@ -232,8 +246,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-10-04T01:08:58.481Z",
-    "duration": 39025.746,
+    "startTime": "2025-10-06T17:27:49.231Z",
+    "duration": 67244.551,
     "expected": 0,
     "skipped": 0,
     "unexpected": 1,
