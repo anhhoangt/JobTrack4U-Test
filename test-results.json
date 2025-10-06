@@ -144,27 +144,27 @@
   },
   "suites": [
     {
-      "title": "auth-happy-path.spec.js",
-      "file": "auth-happy-path.spec.js",
+      "title": "auth-comprehensive.spec.js",
+      "file": "auth-comprehensive.spec.js",
       "column": 0,
       "line": 0,
       "specs": [],
       "suites": [
         {
-          "title": "Authentication Happy Path - POM",
-          "file": "auth-happy-path.spec.js",
-          "line": 22,
+          "title": "Comprehensive Authentication Tests",
+          "file": "auth-comprehensive.spec.js",
+          "line": 18,
           "column": 6,
           "specs": [],
           "suites": [
             {
-              "title": "🔒 Authentication State Verification",
-              "file": "auth-happy-path.spec.js",
-              "line": 465,
+              "title": "❌ Invalid Credentials Testing",
+              "file": "auth-comprehensive.spec.js",
+              "line": 69,
               "column": 8,
               "specs": [
                 {
-                  "title": "should handle direct URL navigation after authentication",
+                  "title": "should show error for wrong password with valid username",
                   "ok": true,
                   "tags": [],
                   "tests": [
@@ -179,12 +179,12 @@
                           "workerIndex": 0,
                           "parallelIndex": 0,
                           "status": "passed",
-                          "duration": 4135,
+                          "duration": 2785,
                           "errors": [],
                           "stdout": [],
                           "stderr": [],
                           "retry": 0,
-                          "startTime": "2025-10-06T19:26:01.697Z",
+                          "startTime": "2025-10-06T19:47:02.015Z",
                           "annotations": [],
                           "attachments": []
                         }
@@ -192,9 +192,93 @@
                       "status": "expected"
                     }
                   ],
-                  "id": "de9e7153f04ca3c96972-3242c62a6f6ee8a51902",
-                  "file": "auth-happy-path.spec.js",
-                  "line": 499,
+                  "id": "cbb9e5b4d25c2b54dcd7-3a155df4d8ffc43e3e5e",
+                  "file": "auth-comprehensive.spec.js",
+                  "line": 71,
+                  "column": 5
+                }
+              ]
+            },
+            {
+              "title": "🔤 Field Validation Testing",
+              "file": "auth-comprehensive.spec.js",
+              "line": 201,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "should validate email format",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 1374,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2025-10-06T19:47:04.981Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "cbb9e5b4d25c2b54dcd7-eb6bacf4f056fd2d31d4",
+                  "file": "auth-comprehensive.spec.js",
+                  "line": 203,
+                  "column": 5
+                }
+              ]
+            },
+            {
+              "title": "🔒 Security Testing",
+              "file": "auth-comprehensive.spec.js",
+              "line": 278,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "should handle SQL injection attempts gracefully",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 60000,
+                      "annotations": [],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "parallelIndex": 0,
+                          "status": "passed",
+                          "duration": 5157,
+                          "errors": [],
+                          "stdout": [],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2025-10-06T19:47:06.363Z",
+                          "annotations": [],
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "cbb9e5b4d25c2b54dcd7-cae35a2663a9ce81a618",
+                  "file": "auth-comprehensive.spec.js",
+                  "line": 280,
                   "column": 5
                 }
               ]
@@ -206,9 +290,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2025-10-06T19:25:29.321Z",
-    "duration": 36810.792,
-    "expected": 1,
+    "startTime": "2025-10-06T19:46:29.618Z",
+    "duration": 41983.558,
+    "expected": 3,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0
