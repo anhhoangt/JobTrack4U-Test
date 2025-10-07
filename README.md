@@ -1,6 +1,6 @@
 # JobTrack E2E Test Suite
 
-End-to-end test automation for the JobTrack application using Playwright and the Page Object Model (POM) pattern.
+End-to-end test automation for the JobTrack application using Playwright and the Page Object Model (POM) pattern...
 
 ## 🚀 Quick Start
 
