@@ -7,7 +7,7 @@ End-to-end test automation for the JobTrack application using Playwright and the
 ### Prerequisites
 - Node.js (v16 or higher)
 - npm or yarn
-- ........
+- .........
 ### Installation
 ```bash
 # Clone the repository
